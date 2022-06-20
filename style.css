@@ -1,0 +1,25 @@
+*{
+    padding: 10px;
+    margin: 0px auto;
+ background-color: gold;
+}
+button{
+    width: 150px;
+    height: 40px;
+   background-color: aqua;
+   border-radius: 20px;
+   font-weight: bolder;
+}
+div{
+    text-align: center;
+}
+input{
+    background-color: aliceblue;
+    font-weight: bolder;
+}
+button:hover{
+ background-color: chartreuse;
+    cursor: pointer;
+    padding: 30px;
+    padding-top: 15px;
+}
