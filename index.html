@@ -14,8 +14,8 @@
         <h1> Matrix Multiply Table</h1>
         <form onsubmit="input(); return false">
 
-            <input type="number" min="2" id="input1" placeholder="number1" required> <span>x</span>
-            <input type="number" min="2" id="input2" placeholder="number2" required> <br><br>
+            <input type="number"  id="input1" placeholder="number1" required> <span>x</span>
+            <input type="number"  id="input2" placeholder="number2" required> <br><br>
             <button type="submit">Print</button>
 
         </form><br><br>
@@ -25,7 +25,7 @@
             <div id="matrix1"></div>=
             <div id="matrix2"></div><br>
             <button>Multiply</button><br>
-            <div id="matrixResult"></div>
+            <div id="resultMatrix"></div>
 
         </form>
     </div>
@@ -36,13 +36,13 @@
         
         let matrix1 = document.querySelector("#matrix1");
         let matrix2 = document.querySelector("#matrix2");
-        let matrixResult = document.querySelector("#matrixResult");
+        let resultMatrix = document.querySelector("#resultMatrix");
         function input() {
 
 
             matrix1.innerHTML = " ";
             matrix2.innerHTML = " ";
-            matrixResult.innerHTML = " ";
+            resultMatrix.innerHTML = " ";
 
             value1 = document.querySelector("#input1").value;
             value2 = document.querySelector("#input2").value;
@@ -51,10 +51,12 @@
                 alert("Matrix value must be same");
                 return;
             }
-         if(value1==0 || value2 ==0){
-          alert("Enter Value")
             if(value1 <2 || value2 <2){
                 alert("Please Enter Greater Value");
+                return;
+            }
+            if(value1 ==0 || value2 ==0){
+                alert("Please Enter Value");
                 return;
             }
             for (let i = 0; i < value1; i++) {
@@ -63,12 +65,12 @@
                     `<input class="m1${i} m1${j}" id="m1${i}${j}" placeholder="0" type="number">`;
                     matrix2.innerHTML +=
                     `<input class="m2${i} m2${j}" id="m2${i}${j}"  placeholder="0" type="number">`;
-                    matrixResult.innerHTML +=
+                    resultMatrix.innerHTML +=
                         `<input class="m3${i} m3${j}" id="m3${i}${j}"  readonly placeholder="0" type="number">`;
                 }
                 matrix1.innerHTML += `<br>`;
                 matrix2.innerHTML += `<br>`;
-                matrixResult.innerHTML += `<br>`;
+                resultMatrix.innerHTML += `<br>`;
             }
             document.getElementById("onsubmitform").style.visibility = "visible";
         }
@@ -103,9 +105,7 @@
             }
             
         }
-         
-        }
     </script>
 </body>
-
+</body>
 </html>  
